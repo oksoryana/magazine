@@ -11,32 +11,59 @@ let mainList = {
 	shopGoods: [],
 	price: [],
 	employers: {},
-	open: false
+	open: false,
+	discount: true
 }
 
 
-//мой способ 1
 
-for (let i=0; i<3; i++)
+for ( let i = 0 ; i < 3 ; i ++ )
 {
-	mainList.shopGoods [i] = prompt ("какой тип товаров будем продавать?");
-	mainList.price [i] = prompt ("Цена товара");
+	mainList . shopGoods [i] =  prompt ( "какой тип товаров будем продавать? " );
+	mainList . price [i] =  prompt ( " Цена товара " );
 }
 
-//мой способ 2
-/*var num=0;
-do
-{
-	mainList.shopGoods [num] = prompt ("какой тип товаров будем продавать?");
-	num++; 
-} while (num<3);
-*/
+// дисконтная система
 
-// мой способ 3
-/*var num=0;
-while (num<3)
-{
-	mainList.shopGoods [num] = prompt ("какой тип товаров будем продавать?");
-	num++;
+function showmainList () {
+	for (let i=0;i<3;i++)
+	{
+	if (mainList.discount==true)
+	{
+		let q= mainList.price[i]*0.8;
+		alert (q);
+
+	} else {alert ("Скидка отсутствует")
 }
-*/
+}
+}
+showmainList ();
+
+//Нанять сотрудников 3 и 4 задание
+
+let employers = {
+	number: [],
+	name: []
+}
+
+function callname(x) {
+	for (let i=1;i<=x;i++) {
+		let a = prompt ("Как зовут сотрудника?");
+		employers.number['i'] = i;
+		employers.name['i'] = a;
+		console.log (employers.number["i"]+" - "+employers.name['i']);
+	}
+}
+
+let x = prompt ("Сколько сотрудников нанять?");
+callname (x);
+
+
+
+// подсчет бюджета
+
+function  budg () {
+		alert ("Бюджет =" + " " + mainList . budget / 30 );
+}
+budg ();
+
